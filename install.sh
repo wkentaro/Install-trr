@@ -7,11 +7,12 @@ fi
 
 # install apel
 if ! [ -f /usr/local/share/emacs/23.3/site-lisp/emu/poe.el ]; then
+    MAKE_FLAGS=installer=${USER} TRRDIR=/var/lib/trr22 LISPDIR=/usr/share/emacs/site-lisp/trr22 INFODIR=/usr/share/info BINDIR=/usr/share/emacs/site-lisp/trr22 SED=/bin/sed GREP=/bin/grep
     wget http://git.chise.org/elisp/dist/apel/apel-10.8.tar.gz
     tar zxvf apel-10.8.tar.gz
     cd apel-10.8
-    make
-    sudo make install
+    make {$MAKE_FLAGS}
+    sudo make install {$MAKE_FLAGS}
     cd ..
 fi
 
