@@ -6,25 +6,30 @@ if ! [ -f /usr/bin/emacs23 ]; then
 fi
 
 # install apel
+wget http://git.chise.org/elisp/dist/apel/apel-10.8.tar.gz
+tar zxf apel-10.8.tar.gz
 if ! [ -f /usr/local/share/emacs/23.3/site-lisp/emu/poe.el ]; then
-    MAKE_FLAGS=installer=${USER} TRRDIR=/var/lib/trr22 LISPDIR=/usr/share/emacs/site-lisp/trr22 INFODIR=/usr/share/info BINDIR=/usr/share/emacs/site-lisp/trr22 SED=/bin/sed GREP=/bin/grep
-    wget http://git.chise.org/elisp/dist/apel/apel-10.8.tar.gz
-    tar zxf apel-10.8.tar.gz
     cd apel-10.8
-    make {$MAKE_FLAGS}
-    sudo make install {$MAKE_FLAGS}
+    make clean
+    make all
+    sudo make install
     cd ..
 fi
 
 # install trr
 if ! [ -d /usr/share/emacs/site-lisp/trr22 ]; then
+    MAKE_FLAGS="installer=${USER}
+                TRRDIR=/var/lib/trr22
+                LISPDIR=/usr/share/emacs/site-lisp/trr22
+                INFODIR=/usr/share/info BINDIR=/usr/share/emacs/site-lisp/trr22
+                SED=/bin/sed GREP=/bin/grep"
     wget https://trr22.googlecode.com/files/trr22_0.99-5.tar.gz
     tar zxf trr22_0.99-5.tar.gz
     cd trr22-0.99
     cp ../apel-10.8/*.el .
     make clean
-    make all
-    sudo make install
+    make all ${MAKE_FLAGS}
+    sudo make install ${MAKE_FLAGS}
 else
     echo """
     TRR is already installed.
