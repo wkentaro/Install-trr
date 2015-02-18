@@ -1,17 +1,28 @@
 #!/bin/sh
 
 # install emacs
-if ! [ -f /usr/bin/emacs23 ]; then
-    sudo apt-get install emacs23
+if ! [ -f /usr/bin/emacs ]; then
+    sudo apt-get install emacs
+fi
+
+# get ubuntu version
+UBUNTU_VER=`lsb_release -r | awk '{print $0 = substr($0, 10)}'`
+if [ "$UBUNTU_VER" = "14.04" ]; then
+  EMACS_VER="24.3"
+elif [ "$UBUNTU_VER" = "12.04" ]; then
+  EMACS_VER="23.3"
+else
+  echo "Unsupported os version."
+  return
 fi
 
 # install apel
 wget http://git.chise.org/elisp/dist/apel/apel-10.8.tar.gz
 tar zxf apel-10.8.tar.gz
-if ! [ -f /usr/local/share/emacs/23.3/site-lisp/emu/poe.el ]; then
+if ! [ -f /usr/local/share/emacs/${EMACS_VER}/site-lisp/emu/poe.el ]; then
     cd apel-10.8
     make clean
-    make all
+    make
     sudo make install
     cd ..
 fi
@@ -36,7 +47,7 @@ else
     To use trr on emacs, please add lines below to your emacs config file. (ex. ~/.emacs.d/init.el or ~/.emacs)
 
     (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
-    (add-to-list 'load-path "/usr/local/share/emacs/23.3/site-lisp/emu")
+    (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
     (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
 
     Now you can play trr on your emacs by "M-x trr".
@@ -61,7 +72,7 @@ cat <<-EOF
     Finally, please add lines below to your emacs config file. (ex. ~/.emacs.d/init.el or ~/.emacs)
 
     (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
-    (add-to-list 'load-path "/usr/local/share/emacs/23.3/site-lisp/emu")
+    (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
     (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
 
     Now you can play trr on your emacs by "M-x trr".
