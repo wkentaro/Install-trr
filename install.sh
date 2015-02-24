@@ -74,16 +74,18 @@ if ! [ -d /usr/share/emacs/site-lisp/trr22 ]; then
   sudo make install ${MAKE_FLAGS}
   sudo cp -r record /var/lib/trr22/
 else
-  echo """
-  TRR is already installed.
-  To use trr on emacs, please add lines below to your emacs config file. (ex. ~/.emacs.d/init.el or ~/.emacs)
+  echo <<-EOF
 
-  (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
-  (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
-  (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
+    TRR is already installed.
+    To use trr on emacs, please add lines below to your emacs config file. (ex. ~/.emacs.d/init.el or ~/.emacs)
 
-  Now you can play trr on your emacs by "M-x trr".
-  """
+    (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
+    (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
+    (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
+
+    Now you can play trr on your emacs by "$ emacs -f trr"
+
+  EOF
   return
 fi
 
@@ -98,6 +100,6 @@ cat <<-EOF
     (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
     (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
 
-    Now you can play trr on your emacs by "M-x trr".
+    Now you can play trr on your emacs by "$ emacs -f trr"
 
 EOF
