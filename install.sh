@@ -73,20 +73,6 @@ if ! [ -d /usr/share/emacs/site-lisp/trr22 ]; then
   make all ${MAKE_FLAGS}
   sudo make install ${MAKE_FLAGS}
   sudo cp -r record /var/lib/trr22/
-else
-  echo <<-EOF
-
-    TRR is already installed.
-    To use trr on emacs, please add lines below to your emacs config file. (ex. ~/.emacs.d/init.el or ~/.emacs)
-
-    (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
-    (add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
-    (autoload 'trr "/usr/share/emacs/site-lisp/trr22/trr" nil t)
-
-    Now you can play trr on your emacs by "$ emacs -f trr"
-
-  EOF
-  return
 fi
 
 
