@@ -1,8 +1,12 @@
 =============
 trr-installer
 =============
+.. image:: https://travis-ci.org/wkentaro/trr-installer.svg
+  :alt: Build Status
+  :target: https://travis-ci.org/wkentaro/trr-installer/
+
 .. image:: https://badge.fury.io/gh/wkentaro%2Ftrr-installer.svg
-    :target: http://badge.fury.io/gh/wkentaro%2Ftrr-installer
+  :target: http://badge.fury.io/gh/wkentaro%2Ftrr-installer
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
   :alt: MIT License
