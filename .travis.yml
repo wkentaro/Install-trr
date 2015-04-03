@@ -1,0 +1,14 @@
+language: ruby
+before_install:
+  - sudo apt-get install emacs
+install:
+  - sudo ./install.sh || { echo "install failed" ; exit 1 ; }
+script:
+  - ./.travis.sh
+after_install:
+  - sudo ./uninstall.sh || { echo "uninstall failed" ; exit 1; }
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
