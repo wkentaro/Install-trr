@@ -14,7 +14,7 @@ fi
 
 # test trr
 cat > test.el <<-EOF
-(add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp")
+(add-to-list 'load-path "/usr/local/share/emacs/${EMACS_VER}/site-lisp/emu")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/trr22")
 (require 'trr)
 (print (TRR:trainer-menu-buffer))
