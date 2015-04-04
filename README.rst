@@ -18,6 +18,7 @@ trr-installer
 
 Usage
 =====
+
 | *Attention*: this installation script is only for **Ubuntu 12.04** or **Ubuntu 14.04** users.
 | If you're working in other environment, please edit `install.sh <https://github.com/wkentaro/trr-installer/blob/master/install.sh>`_.
 
