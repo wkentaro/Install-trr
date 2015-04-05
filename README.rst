@@ -29,7 +29,7 @@ Usage
 
 License
 =======
-Copyright (C) 2014-2015 Kentaro Wada
-Released under the MIT license
-https://github.com/wkentaro/trr-installer/blob/master/LICENSE
+| Copyright (C) 2014-2015 Kentaro Wada
+| Released under the MIT license
+| https://github.com/wkentaro/trr-installer/blob/master/LICENSE
 
