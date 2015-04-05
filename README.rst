@@ -12,7 +12,6 @@ trr-installer
   :alt: MIT License
   :target: https://github.com/wkentaro/trr-installer/blob/master/LICENSE
 
-
 | Installation script for TRR (typing app on Emacs) on Ubuntu 12.04 or 14.04.
 | If you are OS X user, see `homebrew-trr <https://github.com/wkentaro/homebrew-trr>`_.
 
