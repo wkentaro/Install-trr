@@ -73,6 +73,7 @@ if ! [ -d /usr/share/emacs/site-lisp/trr22 ]; then
   make all ${MAKE_FLAGS}
   sudo make install ${MAKE_FLAGS}
   sudo cp -r record /var/lib/trr22/
+  sudo cp -r text /var/lib/trr22
 fi
 
 
