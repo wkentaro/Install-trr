@@ -15,6 +15,7 @@ Install-trr
 | Installation script for TRR (typing app on Emacs) on Ubuntu 12.04 or 14.04.
 | If you are OS X user, see `homebrew-trr <https://github.com/wkentaro/homebrew-trr>`_.
 
+
 Usage
 =====
 
@@ -27,9 +28,18 @@ Usage
   cd Install-trr
   sudo ./install.sh
 
+
+Screencast
+==========
+Below is installing trr demo movie.
+
+.. image:: assets/install_guide.gif
+  :alt: Install Guide
+  :target: assets/install_guide.gif
+
+
 License
 =======
 | Copyright (C) 2014-2015 Kentaro Wada
 | Released under the MIT license
 | https://github.com/wkentaro/Install-trr/blob/master/LICENSE
-
